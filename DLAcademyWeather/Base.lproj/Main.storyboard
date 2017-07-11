@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.19" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.16"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="FiraSans-Bold.ttf">
+            <string>FiraSans-Bold</string>
+        </array>
+        <array key="FiraSans-Light.ttf">
+            <string>FiraSans-Light</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Loading View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LoadingViewController" customModule="DLAcademyWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading data ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ShC-VM-O6Q">
+                                <rect key="frame" x="118" y="323" width="139" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="urw-Ne-qRQ" kind="show" identifier="showWeather" id="S7C-a4-hKf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-12" y="77"/>
+        </scene>
+        <!--Weather View Controller-->
+        <scene sceneID="5jI-Yt-eNV">
+            <objects>
+                <viewController id="urw-Ne-qRQ" customClass="WeatherViewController" customModule="DLAcademyWeather" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IKN-Fg-lK2"/>
+                        <viewControllerLayoutGuide type="bottom" id="VUR-90-J4i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TR3-vE-EDg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="FLE-ly-OEC">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="k5j-yO-RIi" customClass="TopView" customModule="DLAcademyWeather" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headerCell" id="qYA-iJ-6Nh" customClass="HeaderCell" customModule="DLAcademyWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="328" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qYA-iJ-6Nh" id="krz-TN-OsI">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="elow_elipse_title-1" translatesAutoresizingMaskIntoConstraints="NO" id="CLW-tZ-qfo">
+                                                    <rect key="frame" x="2" y="10" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="Tts-qj-g9v"/>
+                                                        <constraint firstAttribute="height" constant="40" id="u22-TF-aTn"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PROGNOZA NA 48 GODZ." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFt-ui-dFI" userLabel="textLabel">
+                                                    <rect key="frame" x="21" y="19.5" width="204.5" height="20"/>
+                                                    <fontDescription key="fontDescription" name="FiraSans-Bold" family="Fira Sans" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CLW-tZ-qfo" firstAttribute="leading" secondItem="krz-TN-OsI" secondAttribute="leading" constant="2" id="5LH-eA-Ewz"/>
+                                                <constraint firstItem="AFt-ui-dFI" firstAttribute="leading" secondItem="krz-TN-OsI" secondAttribute="leadingMargin" constant="13" id="FgF-qu-bqj"/>
+                                                <constraint firstItem="CLW-tZ-qfo" firstAttribute="top" secondItem="krz-TN-OsI" secondAttribute="top" constant="10" id="Pl7-50-AMn"/>
+                                                <constraint firstItem="AFt-ui-dFI" firstAttribute="centerY" secondItem="CLW-tZ-qfo" secondAttribute="centerY" id="b9p-oD-u2d"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="AFt-ui-dFI" id="Mj9-Dd-JRN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="weatherCell" rowHeight="60" id="UHC-lF-0ag" customClass="WeatherCell" customModule="DLAcademyWeather" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="372" width="320" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UHC-lF-0ag" id="e42-Ls-Zmc">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="59.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z5a-0k-t1V" userLabel="WeatherCellStack">
+                                                    <rect key="frame" x="18" y="8" width="284" height="43.5"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="7Kj-zy-tsg" userLabel="DescriptionStack">
+                                                            <rect key="frame" x="0.0" y="0.0" width="182" height="35"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Dziś 12 kwietnia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="COA-Su-Myq">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="17.5"/>
+                                                                    <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="800" text="Słonecznie" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="200" translatesAutoresizingMaskIntoConstraints="NO" id="0Ap-hM-M67">
+                                                                    <rect key="frame" x="0.0" y="17.5" width="182" height="17.5"/>
+                                                                    <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="15"/>
+                                                                    <color key="textColor" red="0.44618496192893398" green="0.44618496192893398" blue="0.44618496192893398" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="highlightedColor" red="0.44618496192893398" green="0.44618496192893398" blue="0.44618496192893398" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="0Ap-hM-M67" firstAttribute="top" secondItem="COA-Su-Myq" secondAttribute="bottom" id="MGi-5X-htx"/>
+                                                                <constraint firstAttribute="bottom" secondItem="0Ap-hM-M67" secondAttribute="bottom" id="kQC-8K-JW9"/>
+                                                                <constraint firstItem="COA-Su-Myq" firstAttribute="top" secondItem="7Kj-zy-tsg" secondAttribute="top" id="uOn-e6-bg3"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="12" translatesAutoresizingMaskIntoConstraints="NO" id="ZKg-FE-J0h">
+                                                            <rect key="frame" x="192" y="0.0" width="42" height="42"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="42" id="TyL-ta-KGh"/>
+                                                                <constraint firstAttribute="height" constant="42" id="tL8-mg-nWp"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bMI-Se-d5z" userLabel="TemperatureStack">
+                                                            <rect key="frame" x="244" y="0.0" width="40" height="35"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4L-q5-eQZ">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="17.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="VyX-IP-xOW"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="15"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="3°" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js2-a8-UC1">
+                                                                    <rect key="frame" x="0.0" y="17.5" width="40" height="17.5"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="40" id="t6d-I3-Sb6"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" name="FiraSans-Light" family="Fira Sans" pointSize="15"/>
+                                                                    <color key="textColor" red="0.44618496190000001" green="0.44618496190000001" blue="0.44618496190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                    <color key="highlightedColor" red="0.44618496190000001" green="0.44618496190000001" blue="0.44618496190000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Z5a-0k-t1V" secondAttribute="trailing" constant="10" id="0ls-Q8-a4A"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Z5a-0k-t1V" secondAttribute="bottom" id="Oym-ix-n5y"/>
+                                                <constraint firstItem="Z5a-0k-t1V" firstAttribute="top" secondItem="e42-Ls-Zmc" secondAttribute="topMargin" id="SBg-8X-CEs"/>
+                                                <constraint firstItem="7Kj-zy-tsg" firstAttribute="top" secondItem="e42-Ls-Zmc" secondAttribute="top" constant="8" id="mqh-4v-k7X"/>
+                                                <constraint firstItem="Z5a-0k-t1V" firstAttribute="leading" secondItem="e42-Ls-Zmc" secondAttribute="leadingMargin" constant="10" id="v1L-cN-ec5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dateLabel" destination="COA-Su-Myq" id="jYS-6i-XL1"/>
+                                            <outlet property="descriptionLabel" destination="0Ap-hM-M67" id="enr-62-kDh"/>
+                                            <outlet property="feelTemp" destination="Js2-a8-UC1" id="hWq-bA-qkX"/>
+                                            <outlet property="pictogram" destination="ZKg-FE-J0h" id="aBh-Sj-1ae"/>
+                                            <outlet property="realTemp" destination="Z4L-q5-eQZ" id="Gsc-1g-E3G"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FLE-ly-OEC" secondAttribute="trailing" id="DMv-3N-BbH"/>
+                            <constraint firstItem="FLE-ly-OEC" firstAttribute="top" secondItem="IKN-Fg-lK2" secondAttribute="bottom" id="DpA-oM-FQc"/>
+                            <constraint firstItem="FLE-ly-OEC" firstAttribute="leading" secondItem="TR3-vE-EDg" secondAttribute="leading" id="MHb-sh-YaP"/>
+                            <constraint firstItem="VUR-90-J4i" firstAttribute="top" secondItem="FLE-ly-OEC" secondAttribute="bottom" id="aul-6Z-bru"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="FLE-ly-OEC" id="ewk-KV-UYa"/>
+                        <outlet property="topView" destination="k5j-yO-RIi" id="R6d-wc-238"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZPN-Nm-o6h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="871" y="77"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="12" width="429" height="450"/>
+        <image name="elow_elipse_title-1" width="105" height="105"/>
+    </resources>
+</document>
