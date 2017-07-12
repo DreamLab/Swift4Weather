@@ -29,28 +29,10 @@ class Model {
 
     func retreiveData(completion: @escaping () -> Void) {
         Alamofire.request("http://onetsgweatherapi.dreamlab.pl/v1.0/forecast/locations/351898/now-and-tomorrow").responseJSON { response in
-            if let json = response.result.value as? Dictionary<String, Any>  {
-                guard let forecastData = json["forecast"] as? Dictionary<String, Any>, let forecastDataNow = forecastData["now"] as? Dictionary<String, Any> else {
-                    return
-                }
-                self.generateForecastForNow(forecastData: forecastDataNow)
-                //print(self.forecasts)
-            }
-            if !self.forecasts.isEmpty {
-                completion()
-            }
+            // tutaj gdy oba requesty zwróciły dane wołamy completion
         }
         Alamofire.request("http://onetsgweatherapi.dreamlab.pl/v1.0/forecast/locations/351898/long-term").responseJSON { response in
-            
-            if let json = response.result.value as? Dictionary<String, Any>  {
-                guard let forecastData = json["forecast"] as? Array<Dictionary<String, Any>> else {
-                    return
-                }
-                self.forecasts = self.generateForecasts(forecastData: forecastData)
-            }
-            if self.forecastForNow != nil {
-                completion()
-            }
+            // tutaj gdy oba requesty zwróciły dane wołamy completion
         }
     }
     
