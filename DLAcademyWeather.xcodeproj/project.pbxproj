@@ -20,6 +20,11 @@
 		40BEF9631F0A6EC400E991FA /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BEF9621F0A6EC400E991FA /* TopView.xib */; };
 		40BEF9651F0A884800E991FA /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEF9641F0A884800E991FA /* TopView.swift */; };
 		40DB743D1F14BCB400598519 /* HeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40DB743C1F14BCB400598519 /* HeaderCell.swift */; };
+		40DB74431F163AA600598519 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB74401F1619DA00598519 /* FiraSans-Bold.ttf */; };
+		40DB74441F163AA900598519 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB74421F1619DA00598519 /* FiraSans-Light.ttf */; };
+		40DB74451F163AAC00598519 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB74411F1619DA00598519 /* FiraSans-Medium.ttf */; };
+		40DB74461F163AAF00598519 /* FiraSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB743E1F1619DA00598519 /* FiraSans-Regular.ttf */; };
+		40DB74471F163AB100598519 /* FiraSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB743F1F1619DA00598519 /* FiraSans-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -188,10 +193,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40DB74441F163AA900598519 /* FiraSans-Light.ttf in Resources */,
 				407C1A7F1F0A5C3900FA0347 /* LaunchScreen.storyboard in Resources */,
+				40DB74471F163AB100598519 /* FiraSans-SemiBold.ttf in Resources */,
 				40BEF9631F0A6EC400E991FA /* TopView.xib in Resources */,
+				40DB74451F163AAC00598519 /* FiraSans-Medium.ttf in Resources */,
 				407C1A7C1F0A5C3900FA0347 /* Assets.xcassets in Resources */,
 				407C1A7A1F0A5C3900FA0347 /* Main.storyboard in Resources */,
+				40DB74461F163AAF00598519 /* FiraSans-Regular.ttf in Resources */,
+				40DB74431F163AA600598519 /* FiraSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
