@@ -64,9 +64,9 @@ extension WeatherViewController: UITableViewDataSource {
         }
         
         if indexPath.section == 0 {
-            cell.prepare(for: model.shortTermForecast[indexPath.row])
+            // tutaj przygotowanie komórki krótkoterminowej
         } else {
-            cell.prepare(for: model.longTermForecast[indexPath.row])
+            // tutaj przygotowanie komórki długotermonowej
         }
         return cell
     }
@@ -76,9 +76,9 @@ extension WeatherViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         if section == 0 {
-            headerCell.titleLabel.text = "Prognoza pogody na 48 godz.".uppercased()
+            // tytuł sekcji krótkoterminowej
         } else {
-            headerCell.titleLabel.text = "Prognoza długoterminowa".uppercased()
+            // tytuł sekcji długoterminowej
         }
         return headerCell.contentView
     }

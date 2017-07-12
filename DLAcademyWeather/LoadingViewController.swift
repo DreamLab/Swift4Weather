@@ -24,6 +24,6 @@ class LoadingViewController: UIViewController {
         guard let desitinationViewController = segue.destination as? WeatherViewController else {
             return
         }
-        desitinationViewController.model = model
+        // Tutaj przypiszmy do następnie wyświetlanego View Controllera obiekt modelu
     }
 }

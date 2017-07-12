@@ -18,11 +18,6 @@ class WeatherCell: UITableViewCell {
     @IBOutlet weak var feelTemp: UILabel!
     
     func prepare(for forecast: Forecast) {
-        descriptionLabel.text = forecast.description + "bla bla bla dududu"
-        descriptionLabel.sizeToFit()
-        realTemp.text = Int(forecast.currentTemp.rounded()).description + "°"
-        feelTemp.text = Int(forecast.currentFeelTemp.rounded()).description + "°"
-        pictogram.image = UIImage(named: forecast.iconId.description)
-        dateLabel.text = forecast.dateDescriptionForCell
+        // Tutaj przypizujemy dane do Labeli jakie są w widoku
     }
 }

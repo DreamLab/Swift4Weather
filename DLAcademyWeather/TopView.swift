@@ -50,11 +50,7 @@ import UIKit
     }
     
     func prepareView(with forecast: Forecast){
-        actualTemp.text = forecast.currentTemp.description + "°"
-        feelTemp.text = forecast.currentFeelTemp.description + "℃"
-        weatherDescription.text = forecast.description
-        weatherDescription.sizeToFit()
-        pictogram.image = UIImage(named: forecast.iconId.description)
+        // Tutaj nadpisujemy defaultowe wartości w widoku
     }
 
 }

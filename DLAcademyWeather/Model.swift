@@ -18,18 +18,13 @@ class Model {
     let dateFormatter = DateFormatter()
     
     var shortTermForecast: [Forecast] {
-        return forecasts.filter { item in
-            return (calendar.isDateInTomorrow(item.date) || calendar.isDateInToday(item.date)) && calendar.component(.hour, from: item.date) == 14
-        }
+        return forecasts
+        // Tutaj zwracamy tylko prognozy na jutro i pojutrze
     }
     
     var longTermForecast: [Forecast] {
-        guard let tomorrow = calendar.date(byAdding: .day, value: 2, to: Date()), let seventhDay = calendar.date(byAdding: .day, value: 7, to: Date()) else {
-            return [Forecast]()
-        }
-        return forecasts.filter { item in
-            return (tomorrow...seventhDay).contains(item.date) && calendar.component(.hour, from: item.date) == 14
-        }
+        return forecasts
+        // Tutaj zwracamy tylko prognozy +3 dni do +7 dni
     }
 
     func retreiveData(completion: @escaping () -> Void) {
