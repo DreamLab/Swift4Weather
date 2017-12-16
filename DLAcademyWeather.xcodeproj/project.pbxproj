@@ -16,6 +16,12 @@
 		407C1A7A1F0A5C3900FA0347 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407C1A781F0A5C3900FA0347 /* Main.storyboard */; };
 		407C1A7C1F0A5C3900FA0347 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 407C1A7B1F0A5C3900FA0347 /* Assets.xcassets */; };
 		407C1A7F1F0A5C3900FA0347 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 407C1A7D1F0A5C3900FA0347 /* LaunchScreen.storyboard */; };
+		40AD31581FE597FE007AAA35 /* FiraSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB74401F1619DA00598519 /* FiraSans-Bold.ttf */; };
+		40AD31591FE597FE007AAA35 /* FiraSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB74421F1619DA00598519 /* FiraSans-Light.ttf */; };
+		40AD315A1FE597FE007AAA35 /* FiraSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB74411F1619DA00598519 /* FiraSans-Medium.ttf */; };
+		40AD315B1FE597FE007AAA35 /* FiraSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB743E1F1619DA00598519 /* FiraSans-Regular.ttf */; };
+		40AD315C1FE597FE007AAA35 /* FiraSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 40DB743F1F1619DA00598519 /* FiraSans-SemiBold.ttf */; };
+		40AD315D1FE59802007AAA35 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 407C1A801F0A5C3900FA0347 /* Info.plist */; };
 		40BEF9561F0A5E9F00E991FA /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEF9551F0A5E9F00E991FA /* LoadingViewController.swift */; };
 		40BEF9631F0A6EC400E991FA /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40BEF9621F0A6EC400E991FA /* TopView.xib */; };
 		40BEF9651F0A884800E991FA /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BEF9641F0A884800E991FA /* TopView.swift */; };
@@ -188,10 +194,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40AD31591FE597FE007AAA35 /* FiraSans-Light.ttf in Resources */,
 				407C1A7F1F0A5C3900FA0347 /* LaunchScreen.storyboard in Resources */,
+				40AD315C1FE597FE007AAA35 /* FiraSans-SemiBold.ttf in Resources */,
 				40BEF9631F0A6EC400E991FA /* TopView.xib in Resources */,
+				40AD315A1FE597FE007AAA35 /* FiraSans-Medium.ttf in Resources */,
 				407C1A7C1F0A5C3900FA0347 /* Assets.xcassets in Resources */,
 				407C1A7A1F0A5C3900FA0347 /* Main.storyboard in Resources */,
+				40AD315B1FE597FE007AAA35 /* FiraSans-Regular.ttf in Resources */,
+				40AD315D1FE59802007AAA35 /* Info.plist in Resources */,
+				40AD31581FE597FE007AAA35 /* FiraSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +231,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-DLAcademyWeather/Pods-DLAcademyWeather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -234,13 +249,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DLAcademyWeather-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

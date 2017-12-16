@@ -21,6 +21,7 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         
         tableView.estimatedRowHeight = 60
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -58,11 +59,11 @@ extension WeatherViewController: UITableViewDataSource {
         return 2
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell") as? WeatherCell, let model = model else {
             return UITableViewCell()
         }
-        
         if indexPath.section == 0 {
             cell.prepare(for: model.shortTermForecast[indexPath.row])
         } else {
@@ -70,8 +71,10 @@ extension WeatherViewController: UITableViewDataSource {
         }
         return cell
     }
-    
-    private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+}
+
+extension WeatherViewController: UITableViewDelegate {
+ func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderCell else {
             return UITableViewCell()
         }

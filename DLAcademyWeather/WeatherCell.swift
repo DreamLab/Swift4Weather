@@ -18,7 +18,7 @@ class WeatherCell: UITableViewCell {
     @IBOutlet weak var feelTemp: UILabel!
     
     func prepare(for forecast: Forecast) {
-        descriptionLabel.text = forecast.description + "bla bla bla dududu"
+        descriptionLabel.text = forecast.description
         descriptionLabel.sizeToFit()
         realTemp.text = Int(forecast.currentTemp.rounded()).description + "°"
         feelTemp.text = Int(forecast.currentFeelTemp.rounded()).description + "°"

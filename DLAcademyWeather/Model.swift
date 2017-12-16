@@ -19,7 +19,7 @@ class Model {
     
     var shortTermForecast: [Forecast] {
         return forecasts.filter { item in
-            return (calendar.isDateInTomorrow(item.date) || calendar.isDateInToday(item.date)) && calendar.component(.hour, from: item.date) == 14
+            return (calendar.isDateInTomorrow(item.date) || calendar.isDateInToday(item.date)) && calendar.component(.hour, from: item.date) == 13
         }
     }
     
@@ -28,7 +28,7 @@ class Model {
             return [Forecast]()
         }
         return forecasts.filter { item in
-            return (tomorrow...seventhDay).contains(item.date) && calendar.component(.hour, from: item.date) == 14
+            return (tomorrow...seventhDay).contains(item.date) && calendar.component(.hour, from: item.date) == 13
         }
     }
 
