@@ -20,16 +20,7 @@ class WeatherViewController: UIViewController {
     // https://developer.apple.com/documentation/uikit/uiviewcontroller
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.dataSource = self
-        
-        tableView.estimatedRowHeight = 60
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-        tableView.separatorStyle = .none
-        tableView.sectionHeaderHeight = 55
-        
-        tableView.backgroundView?.backgroundColor = .clear
-        tableView.backgroundColor = .clear
+        // tutaj przygotowac ustawienia tabelki
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,44 +34,11 @@ class WeatherViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 extension WeatherViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch section {
-        case 0:
-            return 2
-        case 1:
-            return 5
-        default:
-            return 0
-        }
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell") as? WeatherCell, let model = model else {
-            return UITableViewCell()
-        }
-        
-        if indexPath.section == 0 {
-            // tutaj przygotowanie komórki krótkoterminowej
-        } else {
-            // tutaj przygotowanie komórki długotermonowej
-        }
-        return cell
-    }
-    
-    private func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerCell = tableView.dequeueReusableCell(withIdentifier: "headerCell") as? HeaderCell else {
-            return UITableViewCell()
-        }
-        if section == 0 {
-            // tytuł sekcji krótkoterminowej
-        } else {
-            // tytuł sekcji długoterminowej
-        }
-        return headerCell.contentView
-    }
+    // tutaj metody z data source
+}
+
+// MARK: - UITableViewDelegate
+extension WeatherViewController: UITableViewDelegate {
+    // tutaj metody z delegata
 }
 
